@@ -32,7 +32,7 @@ const ChatApp = () => {
       const jwt = localStorage.getItem('token')
       setAuthToken(jwt);
       const chatId = roomId;
-      const response = await axios.get(`http://localhost:5000/api/chat/get-recipient-name/${chatId}`,{
+      const response = await axios.get(`https://chatapp-backend-y2kv.onrender.com/api/chat/get-recipient-name/${chatId}`,{
         headers: {
           Authorization: `Bearer ${jwt}`,
         },
@@ -122,7 +122,7 @@ const ChatApp = () => {
     const chatId = roomId;
     const getMessages = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/chat/get-messages/${chatId}`,{
+        const response = await axios.get(`https://chatapp-backend-y2kv.onrender.com/api/chat/get-messages/${chatId}`,{
           headers: {
             Authorization: `Bearer ${jwt}`,
           },

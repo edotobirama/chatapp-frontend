@@ -28,7 +28,7 @@ export const SocketProvider:React.FC<{ children: React.ReactNode }> = ({ childre
       }
 
     if(token){
-        const newSocket = io('http://localhost:5000', {
+        const newSocket = io('https://chatapp-backend-y2kv.onrender.com', {
         auth: { token }, // Send JWT in auth
         withCredentials: true,
         });

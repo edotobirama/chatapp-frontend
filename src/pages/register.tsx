@@ -22,7 +22,7 @@ const Register: React.FC = () => {
             throw new Error('Passwords do not match');
         }
         
-      const response = await axios.post('http://localhost:5000/api/users/auth/register', {
+      const response = await axios.post('https://chatapp-backend-y2kv.onrender.com/api/users/auth/register', {
         username,
         email,
         password,

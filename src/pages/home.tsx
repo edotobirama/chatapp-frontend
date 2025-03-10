@@ -29,7 +29,7 @@ const Home: React.FC = () => {
     const fetchChats = async () => {
       try {
         if(search!==''){
-          const response = await axios.get(`http://localhost:5000/api/home/friends/search`, {
+          const response = await axios.get(`https://chatapp-backend-y2kv.onrender.com/api/home/friends/search`, {
             params: { q: search }, // Send search query as a parameter
             headers: {
               Authorization: `Bearer ${jwt}`,
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
           setChats(response.data);
         }
         else{
-          const response = await axios.get(`http://localhost:5000/api/home/friends`, {
+          const response = await axios.get(`https://chatapp-backend-y2kv.onrender.com/api/home/friends`, {
             headers: {
               Authorization: `Bearer ${jwt}`,
             },

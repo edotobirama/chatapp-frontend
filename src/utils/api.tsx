@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://chatapp-backend-y2kv.onrender.com/api/',
 });
 
 export const setAuthToken = (token: string | null) => {

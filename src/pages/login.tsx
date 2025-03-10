@@ -14,7 +14,7 @@ const Login: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/users/auth/login', {
+      const response = await axios.post('https://chatapp-backend-y2kv.onrender.com/api/users/auth/login', {
         email,
         password,
       });
