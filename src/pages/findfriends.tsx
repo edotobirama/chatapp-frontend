@@ -22,7 +22,6 @@ const FindFriends: React.FC = () => {
       // Send a request-match event to the backend
       const userId = localStorage.getItem('userId'); // Get the user ID from local storage
       let hashedArray =await hashArray(types) // Replace with the actual hashed array
-      console.log(hashedArray);
       socket.emit('request-match', { userId, hashedArray });
     }
 
