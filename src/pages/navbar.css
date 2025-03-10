@@ -1,0 +1,41 @@
+.navbar{
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    width: 94%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    margin: 0.5rem;
+    border-radius: 25px;
+}
+.navlinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin-right: 1rem;
+    margin: 0;
+    padding: 0;
+}
+.btn{
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    height: 30px;
+    width: 100px;
+    margin-top: 1rem;
+    margin:10px;
+    border: solid 1px #030303;
+}
+.btn:hover{
+    cursor: pointer;
+}
