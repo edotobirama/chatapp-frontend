@@ -93,7 +93,7 @@ const FindFriends: React.FC = () => {
                 </ul>
                 <p className="people">People Online: {peopleOnline}</p>
                 {isWaiting && <p> Waiting for a match</p>}
-                <button className="find-friends-btn" onClick={findFriendsFunction}>{isWaiting ? <>Find Someone</>:<>Cancel</>}</button>                
+                <button className="find-friends-btn" onClick={findFriendsFunction}>{!isWaiting ? <>Find Someone</>:<>Cancel</>}</button>                
             </div>
         </div>
     );
