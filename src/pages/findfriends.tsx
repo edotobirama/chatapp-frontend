@@ -64,9 +64,11 @@ const FindFriends: React.FC = () => {
             if(ms.status==='waiting'){
                 setIsWaiting(true);
             }
+            else if(ms.status==='cancelled'){
+                setIsWaiting(false);
+            }
             else{
                 setIsWaiting(false);
-                if(ms.chatId)
                 nav(`/chat/${ms.chatId}`);
             }
           });
