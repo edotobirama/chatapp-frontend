@@ -81,7 +81,7 @@ const FindFriends: React.FC = () => {
         <div className="find-friends">
             <h1>Preferences</h1>
             <div className="pref">
-                <input type="text" placeholder="type" className="search-bar" value={search} onChange={(event)=>{
+                <input type="text" placeholder="Enter Your Preferences Here" className="search-bar" value={search} onChange={(event)=>{
                     setSearch(event.target.value)
                 }} onKeyDown={handleKeyDown}/>
                 <ul className="types">
@@ -93,7 +93,7 @@ const FindFriends: React.FC = () => {
                 </ul>
                 <p className="people">People Online: {peopleOnline}</p>
                 {isWaiting && <p> Waiting for a match</p>}
-                <button className="find-friends-btn" onClick={findFriendsFunction}>Find Someone</button>
+                <button className="find-friends-btn" onClick={findFriendsFunction}>{isWaiting ? <>Find Someone</>:<>Cancel</>}</button>                
             </div>
         </div>
     );

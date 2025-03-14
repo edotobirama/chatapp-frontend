@@ -10,6 +10,7 @@ const Register: React.FC = () => {
   const [username, setUserName]= useState('');
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmPassword] = useState('');
+  const [loginStatus, setLoginStatus] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const login = useAuth().login;
@@ -21,7 +22,7 @@ const Register: React.FC = () => {
         if (password !== confirmpassword) {
             throw new Error('Passwords do not match');
         }
-        
+        setLoginStatus(true);
       const response = await axios.post('https://chatapp-backend-y2kv.onrender.com/api/users/auth/register', {
         username,
         email,
@@ -30,6 +31,7 @@ const Register: React.FC = () => {
       login(response.data); // Set the token in the context
       window.location.reload();
     } catch (err: Error|any) {
+      setLoginStatus(false);
         if(err instanceof Error) {
             setError(err.message); // "Something went wrong!");
         }
@@ -82,7 +84,8 @@ const Register: React.FC = () => {
           />
         </div>
         {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button className='btn' type="submit">register</button>
+        {!loginStatus&&<button type="submit" className='btn'>Login</button>}
+        {loginStatus && <p style={{ color: 'yellow' }}>Login request is being processed, Please wait...</p>}
       </form>
     </div>
   );

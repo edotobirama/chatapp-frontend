@@ -9,11 +9,13 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loginStatus, setLoginStatus] = useState(false);
   const navigate = useNavigate();
   const login = useAuth().login;
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      setLoginStatus(true);
       const response = await axios.post('https://chatapp-backend-y2kv.onrender.com/api/users/auth/login', {
         email,
         password,
@@ -22,6 +24,7 @@ const Login: React.FC = () => {
       window.location.reload();
     } catch (err) {
       setError('Invalid email or password');
+      setLoginStatus(false);
     }
   };
 
@@ -51,7 +54,8 @@ const Login: React.FC = () => {
           />
         </div>
         {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit" className='btn'>Login</button>
+        {!loginStatus&&<button type="submit" className='btn'>Login</button>}
+        {loginStatus && <p style={{ color: 'yellow' }}>Login request is being processed, Please wait...</p>}
       </form>
     </div>
   );
