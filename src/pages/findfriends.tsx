@@ -66,6 +66,7 @@ const FindFriends: React.FC = () => {
             }
             else{
                 setIsWaiting(false);
+                if(ms.chatId)
                 nav(`/chat/${ms.chatId}`);
             }
           });
